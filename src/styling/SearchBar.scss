@@ -1,74 +1,123 @@
+.search-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.website-name {
+    font-size: 25px;
+    font-weight: bold;
+    color: #24ee00;
+    margin-right: 20px;
+    font-family: 'Lucida Handwriting', cursive; 
+}
+
 .search-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin: 20px 0;
-    position: relative;
-
-    .search-input {
-        padding: 10px 15px;
-        border-radius: 30px;
-        border: 2px solid #ddd;
-        font-size: 16px;
-        width: 300px;
-        transition: border-color 0.3s ease-in-out;
-
-        &:focus {
-            outline: none;
-            border-color: #ff0606;
-        }
-    }
-
-    .search-button {
-        background-color: #ff0606;
-        border: none;
-        border-radius: 50%;
-        padding: 0;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 10px;
-        cursor: pointer;
-        color: white;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: #c90a1a;
-        }
-
-        i {
-            font-size: 18px;
-        }
-    }
-
-    .upload-button-label {
-        background-color: #1d2cb3;
-        border: none;
-        border-radius: 50%;
-        padding: 0; 
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 10px; 
-        cursor: pointer;
-        color: white;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: #15218b;
-        }
-
-        i {
-            font-size: 18px;
-        }
-    }
-
-   
-    .image-upload {
-        display: none;
-    }
+    flex: 1;
+    max-width: 800px;
+    height: 30px; 
+    margin: 0 auto;
+    border-radius: 25px;
+    background-color: #f3f3f3;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.search-input {
+    flex: 1;
+    height: 30px; /* Same as the .search-bar height */
+    line-height: 30px; /* Match line-height to height for better alignment */
+    border: none;
+    outline: none;
+    padding: 0 10px; /* Only left and right padding */
+    border-radius: 25px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #333;
+    transform: translateY(2px); /* Moves text down slightly */
+}
+
+
+
+.search-button {
+    background-color: #24ee00;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #00b800;
+}
+
+.upload-container {
+    margin-left: 10px;
+}
+
+.upload-button-label {
+    cursor: pointer;
+    color: #333;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.upload-button-label:hover {
+    color: #00b800;
+}
+
+.image-upload {
+    display: none; 
+}
+
+.auth-buttons {
+    display: flex; /* Use flexbox to align children in a row */
+    align-items: center; /* Center the items vertically */
+    margin-left: auto; /* Push the buttons to the right */
+}
+
+.auth-button {
+    background: none;
+    border: none;
+    color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px; /* Space between the buttons */
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    transition: color 0.3s;
+}
+
+.auth-button:hover {
+    color: #00b800;
+}
+

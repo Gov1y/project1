@@ -13,7 +13,12 @@ const ImageGallery = ({ images }) => {
     };
 
     if (!images || images.length === 0) {
-        return <div className="no-results">No images found</div>;
+        return (
+            <div className="no-results">
+                <i className="fas fa-image-slash"></i> {/* Add an icon */}
+                <p>No images found. Try adjusting your search or refreshing.</p>
+            </div>
+        );
     }
 
     return (
@@ -25,11 +30,27 @@ const ImageGallery = ({ images }) => {
             {images.map((image) => (
                 <div
                     key={image.id}
-                    className={`image-item ${hoveredImageId && hoveredImageId !== image.id ? 'blurred' : ''}`}
+                    className={`image-item ${
+                        hoveredImageId && hoveredImageId !== image.id ? 'blurred' : ''
+                    }`}
                     onMouseEnter={() => setHoveredImageId(image.id)}
                     onMouseLeave={() => setHoveredImageId(null)}
                 >
-                    <img src={image.urls.small} alt={image.alt_description || 'Image'} />
+                    <div className="image-wrapper">
+                        <img
+                            src={image.urls.small}
+                            alt={image.alt_description || 'Image'}
+                            loading="lazy"
+                        />
+                        {hoveredImageId === image.id && (
+                            <div className="image-overlay">
+                                <p className="image-description">
+                                    {image.alt_description || 'Beautiful Image'}
+                                </p>
+                                {/* Add more details if available, like author */}
+                            </div>
+                        )}
+                    </div>
                 </div>
             ))}
         </Masonry>

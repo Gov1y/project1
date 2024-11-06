@@ -1,0 +1,43 @@
+// Navbar.scss
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #057d1b; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; // Padding around the navbar
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    // No additional margin below the navbar
+    margin-bottom: 0;
+
+    .navbar-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0; // Reset margin to avoid extra space
+        color: #e60023;
+        font-family: 'Lucida Handwriting', cursive; // Use Lucida Handwriting with cursive fallback
+    }
+    
+
+    .navbar-subtitle {
+        font-size: 14px;
+        color: #555;
+        margin: 0; // Reset margin to avoid extra space
+        margin-right: auto; // This will push it to the left if needed
+    }
+
+    .search-bar-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -1,45 +1,66 @@
+//ImageGallery.scss
 .my-masonry-grid {
     display: flex;
-    margin-left: -10px; 
-    width: auto;
-}
-
-.my-masonry-grid_column {
-    padding-left: 10px;
-    background-clip: padding-box;
+    margin-left: -30px; // Adjust gap between columns
+    .my-masonry-grid_column {
+        padding-left: 30px; // Adjust gap between images
+    }
 }
 
 .image-item {
-    margin-bottom: 10px;
     position: relative;
-    overflow: hidden;
-    border-radius: 10px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: transform 0.3s ease, filter 0.3s ease;
 
-    img {
-        width: 100%; 
-        height: auto;
-        display: block;
-        border-radius: 10px; 
-        transition: none; 
+    &.blurred {
+        filter: brightness(0.7);
     }
 
     &:hover {
-        transform: scale(1.05); //pop
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        transform: scale(1.03);
     }
+}
 
-    &.blurred {
-        filter: blur(3px); 
-        transition: filter 0.3s ease; 
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .image-description {
+        margin: 0;
+    }
+}
+
+.image-item:hover .image-overlay {
+    opacity: 1;
 }
 
 .no-results {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #777;
-    margin: 20px 0;
+    i {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
 }
-
